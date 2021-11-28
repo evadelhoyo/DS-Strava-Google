@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project basedir="." default="3.server" name="4_eAuctions_CurrencyExchange">    
+<project basedir="." default="3.server" name="strava_Google">    
 	<property name="src.dir" location="src"/>
    	<property name="bin.dir" location="bin"/>
 	<property name="dist.dir" location="dist"/>
-	<property name="export.file" value="CurrencyExchange.jar"/>
+	<property name="export.file" value="Google.jar"/>
 	<property name="policy.file" location="security/java.policy"/>	
 	<property name="rmiregistry.IP" value="127.0.0.1"/> 
 	<property name="rmiregistry.port" value="1099"/> 
-	<property name="server.name" value="CurrencyExchange"/>
+	<property name="server.name" value="Google"/>
 
 	<path id="classpath">
         <pathelement location="${bin.dir}"/>
@@ -26,7 +26,7 @@
 	</target>
 		
 	<target name="3.server" description="Runs the Server">
-		<java classname="es.deusto.ingenieria.sd.auctions.currency.server.CurrecyExchangeServer" classpathref="classpath" fork="true">
+		<java classname="es.deusto.ingenieria.sd.strava.google.server.LoginGoogleServer" classpathref="classpath" fork="true">
         	<jvmarg value="-Djava.rmi.server.codebase=file:${bin.dir}/"/>
 			<jvmarg value="-Djava.security.policy=${policy.file}"/>
         	<arg value="${rmiregistry.IP}"/> 

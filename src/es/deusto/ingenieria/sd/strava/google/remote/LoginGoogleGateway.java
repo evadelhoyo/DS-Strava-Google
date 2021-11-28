@@ -1,4 +1,4 @@
-package es.deusto.ingenieria.sd.auctions.currency.remote;
+package es.deusto.ingenieria.sd.strava.google.remote;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -9,7 +9,7 @@ import java.rmi.server.UnicastRemoteObject;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class CurrencyExchangeService extends UnicastRemoteObject implements ICurrencyExchange {
+public class LoginGoogleGateway extends UnicastRemoteObject implements ILoginGoogleGateway {
 	private static final long serialVersionUID = 1L;
 
 	protected static final String URL = "https://free.currconv.com/api/v7/convert?q=USD_EUR,GBP_EUR&compact=ultra&apiKey=d4f1b436d25d00b16f3f";
@@ -17,17 +17,17 @@ public class CurrencyExchangeService extends UnicastRemoteObject implements ICur
 	public static float GBP_RATE = 1.17f;
 	
 	//Attribute for the Singleton pattern
-	public static CurrencyExchangeService instance;
+	public static LoginGoogleGateway instance;
 			
-	private CurrencyExchangeService() throws RemoteException {
+	private LoginGoogleGateway() throws RemoteException {
 		super();
 		getConversionRates();
 	}
 	
-	public static CurrencyExchangeService getInstance() {
+	public static LoginGoogleGateway getInstance() {
 		if (instance == null) {
 			try {
-				instance = new CurrencyExchangeService();
+				instance = new LoginGoogleGateway();
 			} catch(Exception ex) {
 				System.err.println("  # Error initializing service(): " + ex.getMessage());
 			}
