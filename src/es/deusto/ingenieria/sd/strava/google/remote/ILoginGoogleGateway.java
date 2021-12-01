@@ -4,5 +4,5 @@ import java.rmi.Remote;
 import java.rmi.RemoteException;
 
 public interface ILoginGoogleGateway extends Remote {
-	public boolean login(String email) throws RemoteException;
+	public boolean login(String email, String comprueba) throws RemoteException;
 }
