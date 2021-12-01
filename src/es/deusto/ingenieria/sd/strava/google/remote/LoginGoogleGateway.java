@@ -34,7 +34,9 @@ public class LoginGoogleGateway extends UnicastRemoteObject implements ILoginGoo
 
 	@Override
 	public boolean login(String email) throws RemoteException {
+		System.out.println("estoy en google");
 		if(email.equals("eva@gmail.com")) {
+			System.out.println("el email es correcto");
 			return true;
 		} else {
 			return false;
