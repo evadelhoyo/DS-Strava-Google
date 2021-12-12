@@ -19,9 +19,9 @@ public class LoginGoogleServer {
 			System.out.println("intento");
 			ILoginGoogleGateway remoteObject = LoginGoogleGateway.getInstance();			
 			Naming.rebind(name, remoteObject);
-			System.out.println(" * Currency Exchange Server '" + name + "' started!!");
+			System.out.println(" * Google Server '" + name + "' started!!");
 		} catch (Exception ex) {
-			System.out.println(" # Currency Exchange Server: " + ex.getMessage());
+			System.out.println(" # Google Server: " + ex.getMessage());
 			ex.printStackTrace();
 		}
 
